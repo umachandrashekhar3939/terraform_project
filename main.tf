@@ -82,9 +82,9 @@ resource "aws_security_group" "app_sg" {
 
 # 7. EC2 Instances
 resource "aws_instance" "app_server" {
-  ami             = "ami-0ec3f93cf7ecd1eeb"
-  instance_type   = "t2.micro"
-  key_name        = "devops"
+  ami             = "ami-0317b0f0a0144b137"
+  instance_type   = "t3.micro"
+  key_name        = "keypair"
   count           = 2
   subnet_id       = aws_subnet.flipkart_subnet.id
   security_groups = [aws_security_group.app_sg.id]
